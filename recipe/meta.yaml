@@ -21,7 +21,7 @@ requirements:
 
 test:
   requires:
-    - cmake
+    - cmake <4
     - {{ compiler('cxx') }}
     - ninja
   files:

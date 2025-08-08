@@ -1,5 +1,5 @@
 {% set name = "lyra" %}
-{% set version = "1.6.1" %}
+{% set version = "1.7.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,21 +7,21 @@ package:
 
 source:
   url: https://github.com/bfgroup/Lyra/archive/{{ version }}.tar.gz
-  sha256: a93f247ed89eba11ca36eb24c4f8ba7be636bf24e74aaaa8e1066e0954bec7e3
+  sha256: d26b9e9dc1e08f88feaebc68965a6e5b25c7cd88617ce910d47cc83efb1e07d9
 
 build:
   number: 0
 
 requirements:
   build:
-    - cmake
+    - cmake <4
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - ninja
 
 test:
   requires:
-    - cmake
+    - cmake <4
     - {{ compiler('cxx') }}
     - ninja
   files:

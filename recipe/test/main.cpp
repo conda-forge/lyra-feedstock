@@ -7,7 +7,7 @@ int main(int argc, const char *argv[]) {
   auto cli = lyra::cli() | lyra::opt(arg, "arg")["-arg"];
   auto result = cli.parse({argc, argv});
   if (!result) {
-    std::cerr << "Error in command line: " << result.errorMessage() << "\n";
+    std::cerr << "Error in command line: " << result.message() << "\n";
     return 1;
   }
   std::cout << "arg=" << arg << "\n";
